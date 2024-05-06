@@ -1,0 +1,10 @@
+References
+1. using interpreter api with tflite - https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/examples/python/label_image.py
+   replacing tf commands with tflite - https://www.tensorflow.org/lite/guide/python
+2. raspi image classification example using tflite support - https://github.com/tensorflow/examples/blob/master/lite/examples/image_classification/raspberry_pi/classify.py  
+
+Notes
+1. for floating model type (mobilenet I am using is not floating model) 
+   floating_model = input_details[0]['dtype'] == np.float32
+   if floating_model:
+    frame = (np.float32(frame) - input_mean) / input_std
